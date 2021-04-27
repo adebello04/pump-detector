@@ -137,15 +137,15 @@ class PumpDetector {
             this.broadcaster.sendText(this.channels, dedent`
                 ${max.percentDiff > 20 ? '🚨 ' : ''}${formatSybmol(max.symbol)}
 
-                📈 <b>Подорожала</b> на <b>${formatLongFloat(max.percentDiff, 2)}%</b> за ${declination(minutes || seconds,  ['последнюю', 'последние', 'последние'])} <b>${minutes != 0 ? `${minutes} ${declination(minutes, ['минуту', 'минуты', 'минут'])} ` : ''}${seconds} ${declination(seconds, ['секунду', 'секунды', 'секунд'])}</b>
+                📈 <b> Has risen in price </b> <b>${formatLongFloat(max.percentDiff, 2)}%</b> за ${declination(minutes || seconds,  ['the last', 'the last', 'the last'])} <b>${minutes != 0 ? `${minutes} ${declination(minutes, ['a minute', 'minutes', 'minutes'])} ` : ''}${seconds} ${declination(seconds, ['give me a sec', 'seconds', 'seconds'])}</b>
 
-                <b>Было:</b> <code>${formatLongFloat(max.priceFrom)}</code>
-                <b>Стало:</b> <code>${formatLongFloat(max.priceTo)}</code>
+                <b> It was: </b> <code>${formatLongFloat(max.priceFrom)}</code>
+                <b> Has become: </b> <code>${formatLongFloat(max.priceTo)}</code>
 
-                <b>Минимум за сутки:</b> <code>${formatLongFloat(max.dayMin)}</code>
-                <b>Максимум за сутки:</b> <code>${formatLongFloat(max.dayMax)}</code>
+                <b>Minimum per day:</b> <code>${formatLongFloat(max.dayMin)}</code>
+                <b> Maximum per day: </b> <code>${formatLongFloat(max.dayMax)}</code>
 
-                <b>Изменение за сутки:</b> <code>${formatLongFloat(max.dayDiff, 2)}%</code>
+                <b>Change Per day:</b> <code>${formatLongFloat(max.dayDiff, 2)}%</code>
             `, { parse_mode: 'HTML' })
         })
     }
