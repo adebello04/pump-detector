@@ -31,7 +31,7 @@ const formatLongFloat = (n, precision = 15) => n.toFixed(precision).replace(/\.?
 
 class PumpDetector {
     constructor(telegram) {
-        this.channels = ['@pump_detect']
+        this.channels = ['@pumpdectective']
         this.broadcaster = new Broadcaster(telegram)
 
         this.startTickers = null
